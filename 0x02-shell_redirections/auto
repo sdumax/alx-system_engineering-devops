@@ -1,0 +1,24 @@
+#!/bin/bash
+echo -e '#!/bin/bash \nhead /etc/passwd' >> 5-firstlines
+echo -e '#!/bin/bash \nhead -n 3 iacta | tail -n 1' >> 6-third_line
+echo -e '#!/bin/bash \necho Best School > "\\*\\\\'\"Best School\"\\'\\\*\$\\?\\*\\*\\*\\*\\*:)"' >> 7-file
+echo -e '#!/bin/bash \nls -la > ls_cwd_content' >> 8-cwd_state
+echo -e '#!/bin/bash \ntail -1 iacta >> iacta' >> 9-duplicate_last_line
+echo -e '#!/bin/bash \nfind . -type f -name '*.js' -delete' >> 10-no_more_js
+echo -e '#!/bin/bash \nfind . -mindepth 1 -type d | wc -l' >> 11-directories
+echo -e '#!/bin/bash \nls -1t | head' >> 12-newest_files
+echo -e '#!/bin/bash \nsort | uniq -u' >> 13-unique
+echo -e '#!/bin/bash \ngrep root /etc/passwd' >> 14-findthatword
+echo -e '#!/bin/bash \ngrep bin /etc/passwd | wc -l' >> 15-countthatword
+echo -e '#!/bin/bash \ngrep -A 3 root /etc/passwd' >> 16-whatsnext
+echo -e '#!/bin/bash \ngrep -v bin /etc/passwd' >> 17-hidethisword
+echo -e '#!/bin/bash \ngrep ^[[:alpha:]] /etc/ssh/sshd_config' >> 18-letteronly
+echo -e '#!/bin/bash \ntr Ac Ze' >> 19-AZ
+echo -e '#!/bin/bash \ntr -d Cc' >> 20-hiago
+echo -e '#!/bin/bash \nrev' >> 21-reverse
+echo -e '#!/bin/bash \ncut -d':' -f1,6 /etc/passwd | sort' >> 22-users_and_homes
+echo -e '#!/bin/bash \nfind . -path "*/*" -empty| rev | cut -d'/' -f1 | rev' >> 100-empty_casks
+echo -e '#!/bin/bash \nfind . -type f -name \*.gif -printf "%f\n" | LC_ALL=C sort -f | rev | cut -b 5- | rev ' >> 101-gifs
+echo -e '#!/bin/bash \ncut -c1 | tr -d '\n'| xargs echo' >> 102-acrostic
+echo -e '#!/bin/bash \ntail -n+2 | cut -d '	' -f1 | sort | uniq -c | sort -nr | rev | cut -d ' ' -f1 | rev | head -n 11' >> 103-the_biggest_fan
+chmod +x ./*
